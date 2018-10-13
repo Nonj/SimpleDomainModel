@@ -145,15 +145,6 @@ open class Job {
     case .Hourly(let incomeAmt):
         type = .Hourly(incomeAmt + amt)
     }
-    
-    
-//    switch self.type {
-//    case .Salary(var incomeAmt): // This enum statement allows for us to access the value inside the discriminated union and change it
-//        incomeAmt = Int(Double(incomeAmt) + amt)
-//
-//    case .Hourly(var incomeAmt):
-//        incomeAmt += amt
-//    }
   }
 }
 
@@ -179,7 +170,7 @@ open class Person {
   open var spouse : Person? {
     get { return self._spouse}
     set(value) {
-        if self.age > 20 {
+        if self.age > 17 {
             self._spouse = value
         }
         
@@ -230,12 +221,6 @@ open class Family {
         }
         
     }
-    
-//    let incomeOne : Int? = self.members[0].job?.calculateIncome(2000)
-//    let incomeTwo : Int? = self.members[1].job?.calculateIncome(2000)
-//
-//    if incomeOne == nil { return incomeTwo != nil ? incomeTwo! : 0}
-//    else { return incomeOne != nil ? incomeOne! : 0}
     return familyIncome!
   }
 }
